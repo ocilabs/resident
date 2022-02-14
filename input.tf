@@ -14,7 +14,7 @@ variable "tenancy" {
     class   = number,
     buckets = string,
     id      = string,
-    home_region = map(string)
+    region  = map(string)
   })
   description = "Tenancy Configuration"
 }
