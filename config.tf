@@ -10,11 +10,6 @@ terraform {
     }
 }
 
-provider "oci" {
-  alias  = "home"
-  region = module.configuration.tenancy.region.key
-}
-
 // metadata for the tenancy
 data "oci_identity_tenancy" "resident" { tenancy_id = var.tenancy.id }
 
