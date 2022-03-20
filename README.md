@@ -41,17 +41,17 @@ output "resident" {
 | Name | Type |
 |------|------|
 | [null_resource.previous](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [oci_identity_compartment.domains](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_compartment) | resource |
-| [oci_identity_compartment.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_compartment) | resource |
-| [oci_identity_group.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_group) | resource |
-| [oci_identity_policy.domains](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_policy) | resource |
-| [oci_identity_tag.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag) | resource |
-| [oci_identity_tag_default.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag_default) | resource |
-| [oci_identity_tag_namespace.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag_namespace) | resource |
-| [oci_ons_notification_topic.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/ons_notification_topic) | resource |
-| [oci_ons_subscription.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/ons_subscription) | resource |
+| [oci_identity_compartment.domains](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_compartment) | resource |
+| [oci_identity_compartment.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_compartment) | resource |
+| [oci_identity_group.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_group) | resource |
+| [oci_identity_policy.domains](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_policy) | resource |
+| [oci_identity_tag.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_tag) | resource |
+| [oci_identity_tag_default.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_tag_default) | resource |
+| [oci_identity_tag_namespace.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/identity_tag_namespace) | resource |
+| [oci_ons_notification_topic.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/ons_notification_topic) | resource |
+| [oci_ons_subscription.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/ons_subscription) | resource |
 | [time_sleep.wait](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
-| [oci_identity_tenancy.resident](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_tenancy) | data source |
+| [oci_identity_tenancy.resident](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/data-sources/identity_tenancy) | data source |
 
 ## Inputs
 
