@@ -21,16 +21,17 @@ variable "tenancy" {
 
 variable "resident" {
   type = object({
-    owner          = string,
-    name           = string,
-    label          = string,
-    stage          = number,
-    region         = map(string)
+    budgets        = map(any),
     compartments   = map(number),
-    repository     = string,
     groups         = map(string),
-    policies       = map(any),
+    label          = string,
+    name           = string,
     notifications  = map(any),
+    owner          = string,
+    policies       = map(any),
+    region         = map(string)
+    repository     = string,
+    stage          = number,
     tag_namespaces = map(number),
     tags           = any
   })
