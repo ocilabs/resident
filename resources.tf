@@ -132,7 +132,7 @@ resource "oci_budget_alert_rule" "resident" {
   description    = "Inform admins about the budget violations for ${var.resident.name}"
   display_name   = "${var.resident.name}_budget_alert"
   freeform_tags  = local.freeform_tags
-  threshold      = budget.threshold
+  threshold      = each.value.threshold
   threshold_type = "PERCENTAGE"
   type           = "ACTUAL"
   message        = "${each.value.threshold} % of the monthly budget for ${var.resident.name} exhausted"
