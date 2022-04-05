@@ -135,7 +135,7 @@ resource "oci_budget_alert_rule" "resident" {
   threshold      = budget.threshold
   threshold_type = "PERCENTAGE"
   type           = "ACTUAL"
-  message        = "90% of the monthly budget for ${var.resident.name} exhausted"
+  message        = "${each.value.threshold} % of the monthly budget for ${var.resident.name} exhausted"
   recipients     = var.resident.owner
 }
 // --- budget controls ---//
