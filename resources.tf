@@ -116,8 +116,8 @@ resource "oci_budget_budget" "resident" {
   description    = "Set budget the ${var.resident.name}"
   display_name   = "${var.resident.name}_budget"
   freeform_tags  = local.freeform_tags
-  reset_period   = each.value.period
-  target_type    = each.value.type
+  reset_period   = each.value.reset_period
+  target_type    = each.value.target_type
   targets        = [oci_identity_compartment.resident.id]
 }
 
@@ -133,7 +133,7 @@ resource "oci_budget_alert_rule" "resident" {
   display_name   = "${var.resident.name}_budget_alert"
   freeform_tags  = local.freeform_tags
   threshold      = each.value.threshold
-  threshold_type = "PERCENTAGE"
+  threshold_type = each.value.threshold_type
   type           = "ACTUAL"
   message        = "${each.value.threshold} % of the monthly budget for ${var.resident.name} exhausted"
   recipients     = var.resident.owner
