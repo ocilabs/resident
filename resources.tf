@@ -124,7 +124,7 @@ resource "oci_budget_budget" "resident" {
 resource "oci_budget_alert_rule" "resident" {
   depends_on     = [oci_budget_budget.resident]
   for_each       = {
-    for budget in var.resident.budgets : budget.name => budget
+    for budget in var.resident.budgets : budget.display_name => budget
     if budget.stage <= var.resident.stage
   }
   budget_id      = oci_budget_budget.resident[each.key].id
