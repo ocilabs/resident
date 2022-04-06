@@ -106,7 +106,7 @@ resource "oci_identity_policy" "domains" {
 resource "oci_budget_budget" "resident" {
   depends_on     = [oci_identity_compartment.resident]
   for_each       = {
-    for budget in var.resident.budgets : budget.name => budget
+    for budget in var.resident.budgets : budget.display_name => budget
     if budget.stage <= var.resident.stage
   }
   amount         = each.value.amount

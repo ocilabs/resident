@@ -21,7 +21,7 @@ variable "tenancy" {
 
 variable "resident" {
   type = object({
-    budgets        = any,
+    budgets        = map(any),
     compartments   = map(number),
     groups         = map(string),
     label          = string,
