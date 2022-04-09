@@ -102,7 +102,7 @@ resource "oci_identity_policy" "domains" {
 }
 // --- policies --- //
 
-// --- budget controls ---//
+/*/ --- budget controls ---//
 resource "oci_budget_budget" "resident" {
   depends_on     = [oci_identity_compartment.resident]
   for_each       = {
@@ -138,7 +138,7 @@ resource "oci_budget_alert_rule" "resident" {
   message        = "${each.value.threshold} % of the monthly budget for ${var.resident.name} exhausted"
   recipients     = var.resident.owner
 }
-// --- budget controls ---//
+// --- budget controls ---/*/
 
 // --- notification service --- //
 resource "oci_ons_notification_topic" "resident" {
