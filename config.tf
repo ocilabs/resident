@@ -24,19 +24,6 @@ locals {
     "lifecycle" = var.resident.stage
     "class"     = var.tenancy.class
   }
-  policies       = jsondecode(templatefile("${path.module}/resident/policies.json", {
-    resident     = oci_identity_compartment.resident.name,
-    application  = "${oci_identity_compartment.resident.name}_application_compartment",
-    network      = "${oci_identity_compartment.resident.name}_network_compartment",
-    database     = "${oci_identity_compartment.resident.name}_database_compartment",
-    #session_username = var.account.user_id,
-    tenancy_OCID = var.tenancy.id,
-    #image_OCID   = "${local.service_name}_image_OCID",
-    #vault_OCID   = "${local.service_name}_vault_OCID",
-    #key_OCID     = "${local.service_name}_key_OCID",
-    #stream_OCID  = "${local.service_name}_stream_OCID",
-    #workspace_OCID = "${local.service_name}_workspace_OCID",
-  }))
 }
 
 // --- define the wait state 
