@@ -146,7 +146,8 @@ resource "oci_ons_notification_topic" "resident" {
     oci_identity_compartment.resident,
     oci_identity_tag_namespace.resident,
     oci_identity_tag.resident,
-    oci_identity_tag_default.resident
+    oci_identity_tag_default.resident,
+    time_sleep.wait
   ]
   compartment_id = oci_identity_compartment.resident.id
   for_each       = var.input.service.notifications
