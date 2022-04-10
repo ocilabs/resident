@@ -80,7 +80,7 @@ resource "oci_identity_group" "resident" {
     oci_ons_notification_topic.resident,
     oci_ons_subscription.resident
   ]
-  compartment_id = var.input.account.id
+  compartment_id = var.input.tenancy.id
   for_each       = var.input.service.groups
   name           = each.value
   description    = "group for the ${each.key} role"
@@ -111,7 +111,7 @@ resource "oci_budget_budget" "resident" {
   }
   amount         = each.value.amount
   budget_processing_period_start_offset = 10
-  compartment_id = var.input.account.id
+  compartment_id = var.input.tenancy.id
   defined_tags   = local.defined_tags
   description    = "Set budget the ${var.input.service.name}"
   display_name   = "${var.input.service.name}_budget"

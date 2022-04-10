@@ -11,7 +11,7 @@ terraform {
 }
 
 // metadata for the tenancy
-data "oci_identity_tenancy" "resident" { tenancy_id = var.input.account.id }
+data "oci_identity_tenancy" "resident" { tenancy_id = var.input.tenancy.id }
 
 locals {
   defined_tags = {
@@ -22,7 +22,7 @@ locals {
     "framework" = "ocloud"
     "owner"     = var.input.service.owner
     "lifecycle" = var.input.service.stage
-    "class"     = var.input.account.class
+    "class"     = var.input.tenancy.class
   }
 }
 
