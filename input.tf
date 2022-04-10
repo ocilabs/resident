@@ -1,39 +1,18 @@
 # Copyright (c) 2020 Oracle and/or its affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
+variable "config" {
+  type = object({
+    enable_delete = bool,
+    parent_id     = string,
+    user_id       = string
+  })
+  description = "Input for database module"
+}
+
 variable "input" {
   type = object({
-    parent_id     = string,
-    enable_delete = bool
+    account  = any,
+    service = any
   })
-  description = "Settings for the service resident"
-}
-
-variable "tenancy" {
-  type = object({
-    class   = number,
-    buckets = string,
-    id      = string,
-    region  = map(string)
-  })
-  description = "Tenancy Configuration"
-}
-
-variable "resident" {
-  type = object({
-    budgets        = map(any),
-    compartments   = map(number),
-    groups         = map(string),
-    label          = string,
-    name           = string,
-    notifications  = map(any),
-    owner          = string,
-    policies       = map(any),
-    region         = map(string)
-    repository     = string,
-    stage          = number,
-    tag_namespaces = map(number),
-    tags           = any
-  })
-  description = "Service Configuration"
 }
