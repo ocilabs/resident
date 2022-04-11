@@ -3,10 +3,10 @@
 
 // --- service resident --- //
 resource "oci_identity_compartment" "resident" {
-  compartment_id = var.config.parent_id
+  compartment_id = var.schema.parent_id
   name           = var.input.service.name
   description    = "compartment that encapsulates all resources for a service"
-  enable_delete  = var.config.enable_delete
+  enable_delete  = var.schema.enable_delete
   freeform_tags  = local.freeform_tags
 }
 // --- service resident --- //
@@ -24,7 +24,7 @@ resource "oci_identity_compartment" "domains" {
   }
   name           = each.key
   description    = "${each.key} management domain for ${var.input.service.name}"
-  enable_delete  = var.config.enable_delete 
+  enable_delete  = var.schema.enable_delete 
   defined_tags   = local.defined_tags
   freeform_tags  = local.freeform_tags
 }
