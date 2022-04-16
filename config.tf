@@ -11,18 +11,18 @@ terraform {
 }
 
 // metadata for the tenancy
-data "oci_identity_tenancy" "resident" { tenancy_id = var.config.tenancy.id }
+data "oci_identity_tenancy" "resident" { tenancy_id = var.configuration.tenancy.id }
 
 locals {
   defined_tags = {
-    for tag in var.config.service.tags : "${tag.namespace}.${tag.name}" => tag.default
-    if tag.stage <= var.config.service.stage
+    for tag in var.configuration.service.tags : "${tag.namespace}.${tag.name}" => tag.default
+    if tag.stage <= var.configuration.service.stage
   }
   freeform_tags = {
     "framework" = "ocloud"
-    "owner"     = var.config.service.owner
-    "lifecycle" = var.config.service.stage
-    "class"     = var.config.tenancy.class
+    "owner"     = var.configuration.service.owner
+    "lifecycle" = var.configuration.service.stage
+    "class"     = var.configuration.tenancy.class
   }
 }
 
