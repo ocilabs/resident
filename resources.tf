@@ -32,12 +32,14 @@ resource "oci_identity_compartment" "domains" {
 
 // --- resource tags --- //
 resource "oci_identity_tag_namespace" "resident" {
-  depends_on     = [ oci_identity_compartment.resident ]
+  depends_on     = [
+    oci_identity_compartment.resident
+  ]
   compartment_id = oci_identity_compartment.resident.id
   freeform_tags  = local.freeform_tags
   for_each = {
     for namespace, stage in var.configuration.resident.tag_namespaces : namespace => stage
-    if stage <= var.configuration.resident.stage
+    if stage <= var.options.stage
   }
   name        = each.key
   description = "${each.key} tag collection for service ${var.configuration.resident.name}"
