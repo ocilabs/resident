@@ -20,7 +20,7 @@ variable "options" {
 
 variable "configuration" {
   type = object({
-    service = any
+    resident = any
   })
   description = "Service configuration"
 }
