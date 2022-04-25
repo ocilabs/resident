@@ -1,6 +1,14 @@
 # Copyright (c) 2020 Oracle and/or its affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
+variable "account" {
+  type = object({
+    tenancy_id     = string,
+    class          = number,
+  })
+  description = "Account parameter"
+}
+
 variable "options" {
   type = object({
     enable_delete = bool,
@@ -12,7 +20,7 @@ variable "options" {
 
 variable "configuration" {
   type = object({
-    tenancy  = any,
-    resident = any
+    service = any
   })
+  description = "Service configuration"
 }
